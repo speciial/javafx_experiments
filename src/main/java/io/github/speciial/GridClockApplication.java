@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class ClockApplication extends Application {
+public class GridClockApplication extends Application {
 
     @Override
     public void start(Stage stage) {

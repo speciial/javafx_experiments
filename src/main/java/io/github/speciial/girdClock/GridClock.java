@@ -10,18 +10,15 @@ import java.time.LocalTime;
 
 public class GridClock {
 
-    private int dotWidth;
-    private int dotHeight;
+    private final double width;
+    private final double height;
 
-    private double width;
-    private double height;
+    private final double dotSize;
+    private final double outlineSize;
+    private final double space;
 
-    private double dotSize;
-    private double outlineSize;
-    private double space;
-
-    private Canvas canvas;
-    private GraphicsContext gc;
+    private final Canvas canvas;
+    private final GraphicsContext gc;
 
     public GridClock(double dotSize, double outlineSize, double space) {
         // hours, minutes, seconds
@@ -29,12 +26,12 @@ public class GridClock {
         this.outlineSize = outlineSize;
         this.space = space;
 
-        this.dotWidth = GridNumbers.GRID_WIDTH * 6 + 2;
-        this.dotHeight = GridNumbers.GRID_HEIGHT;
+        int dotWidth = GridNumbers.GRID_WIDTH * 6 + 2;
+        int dotHeight = GridNumbers.GRID_HEIGHT;
 
         // adding space once for initial offset
-        this.width = this.dotWidth * (dotSize + space) + space;
-        this.height = this.dotHeight * (dotSize + space) + space;
+        this.width = dotWidth * (dotSize + space) + space;
+        this.height = dotHeight * (dotSize + space) + space;
 
         this.canvas = new Canvas(this.width, this.height);
         this.gc = canvas.getGraphicsContext2D();
